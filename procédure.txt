@@ -1,0 +1,15 @@
+Les vidéos moddées commencent à l'id 126
+
+Ouvrir Assets Bundle Extractor
+File -> Open
+Choisir resources.assets
+Trier par nom et rechercher Manifest_Addon
+Cliquer sur Plugins => Export to .txt
+
+Editer le .txt 
+
+Importer le .txt modifié
+Sauvegardé le fichier en resourecs.assets.new
+Supprimer ou renommer l'ancien resource.assets
+Retirer l'extension .new du nouveau resources.assets
+Lancer le jeu et Have Fun
