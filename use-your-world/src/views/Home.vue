@@ -1,10 +1,6 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
   <div id="app">
-  {{componentInstance}}
+    {{componentInstance}}
     <div class="twitchrow">
       <!--
       <component :is="componentInstance" :data=jsonManifest.packages[0][item] v-for="(item, key) in categories" :item=item :key="key" @clicked="onClickChild"/>
@@ -18,7 +14,6 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import Category from '@/components/Category.vue'
 import Yolo from '@/components/Yolo.vue'
 
@@ -30,7 +25,6 @@ console.log(_lodash.keys(manifest.packages[0]));
 export default {
   name: 'Home',
   components: {
-    HelloWorld,
     Category,
     Yolo,
   },
@@ -38,7 +32,7 @@ export default {
     return {
       lodash: _lodash,
       jsonManifest: manifest,
-      categories: ['blank-o-matic_FR', 'extraExtra_FR', 'subTheTitle_FR', 'surveySays_FR'],
+      categories: ['blank-o-matic', 'extraExtra', 'subTheTitle', 'surveySays'],
       isCategorySelected: false
     }
   },
@@ -65,7 +59,12 @@ export default {
       this.isCategorySelected = !this.isCategorySelected;
       this.$forceUpdate();
     }
-  }
+  },
+  mounted() {
+    let bootstrap = document.createElement('script')
+    bootstrap.setAttribute('src', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js')
+    document.head.appendChild(bootstrap)
+  },
 }
 </script>
 <style>
