@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c349a766-bb4e-419e-b63f-7c12a0cbd7c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/use-your-world/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/use-your-world/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-world/src/components/Category.vue" beforeDir="false" afterPath="$PROJECT_DIR$/use-your-world/src/components/Category.vue" afterDir="false" />
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/surveySays_FR.jpg.bak" beforeDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/use-your-world/public/blank-o-matic_FR.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use-your-world/public/extraExtra.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use-your-world/public/subTheTitle_FR.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/use-your-world/public/surveySays.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/apps.53926.70418412507152621.02772b91-d20c-4056-994d-323f9b9ecdef.png:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/blank-o-matic_FR.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/use-your-world/public/blank-o-matic.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/blank-o-matic_FR.png:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/extraExtra_FR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/extraExtra_FR.jpg:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/subTheTitle_FR.jpg:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/surveySays_FR.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/surveySays_FR.jpg.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/public/surveySays_FR.jpg:Zone.Identifier" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/use-your-world/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/use-your-world/src/router/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/use-your-world/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/use-your-world/src/views/Home.vue" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,16 +42,26 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="284ZSLFgVVFHLN9CgKFjMsug91s" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "//wsl$/Ubuntu-22.04/root/ADP_Use_Your_Word/use-your-world/src/views"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl$\Ubuntu-22.04\root\ADP_Use_Your_Word\use-your-world\src\views" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -54,6 +84,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

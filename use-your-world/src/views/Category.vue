@@ -5,16 +5,8 @@
       <!--
       <component :is="componentInstance" :data=jsonManifest.packages[0][item] v-for="(item, key) in categories" :item=item :key="key" @clicked="onClickChild"/>
       -->
-      <!--
       <Category :data=jsonManifest.packages[0][item] v-for="(item, key) in categories" :item=item :key="key" @clicked="onClickChild"/>
-      -->
-      <ul id="category">
-        <li v-for="(item, key) in categories" :item=item :key="key" >
-          <a :href="'/' + item">
-            <img :src="item + '.jpg'" />
-          </a>
-        </li>
-      </ul>
+
       <component :is="componentInstance" />
     </div>
   </div>
@@ -50,7 +42,6 @@ export default {
   computed: {
     componentInstance() {
       this.selectedCategory;
-      console.log('this.selectedCategory');
       console.log(this.selectedCategory);
       return this.lodash.isNil(this.selectedCategory) ? null : 'Yolo';
       //return () => import(`@/components/${name}`)
@@ -83,27 +74,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#category {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  flex-wrap: wrap;
-  justify-content: center;
-
-  /* Passer en mode sass
-  li img {
-    width: 30px;
-    height: 30px;
-  }
-  */
-}
-
-#category li img {
-  width: 15rem;
-  height: 15rem;
 }
 
 .twitchrow {
