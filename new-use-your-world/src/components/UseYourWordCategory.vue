@@ -7,30 +7,31 @@
 
     <div v-for="element in props.data" :key="element.id" class="p-3">
       <div class="row">
-      {{getSubTheTitleVideoPath}}
         <label>N°{{element.id}} - {{element.prompt}}</label>
       </div>
-
-      <div class="row" v-if="props.item == 'subTheTitle'">
-        <video controls width="250" height="250">
-            <source src="file:///C:/Program Files (x86)/Steam/steamapps/common/Use Your Words/uyw_Data/StreamingAssets/Content/SubTheTitle/108/clip_FR.mp4"
-                    type="video/mp4">
-
-            <a href="C:\Program Files (x86)\Steam\steamapps\common\Use Your Words\uyw_Data\StreamingAssets\Content\SubTheTitle\108\clip_FR.mp4">MP4</a>
-            video.
+      <div v-if="props.item == 'subTheTitle'">
+      StreamingAssets/Content/SubTheTitle/{{element.id}}/{{element.name}}
+        <video controls width="500" height="500">
+            <source :src="getVideoPath(element)" type="video/mp4">
         </video>
 
-        <div class="col-md-3">
-          <label>Timecode de début</label>
-          <input v-model="element.start" min="0" />
-        </div>
-        <div class="col-md-3">
-          <label>Timecode de fin</label>
-          <input v-model="element.end" min="1" />
-        </div>
-        <div class="col-md-3">
-          <label>Position ? wtf</label>
-          <input v-model="element.position" />
+        <div class="row">
+          <div class="col-md-3">
+            <label>Timecode de début</label>
+            <input v-model="element.start" min="0" />
+          </div>
+          <div class="col-md-3">
+            <label>Timecode de fin</label>
+            <input v-model="element.end" min="1" />
+          </div>
+          <div class="col-md-3">
+            <label>Position ? wtf</label>
+            <input v-model="element.position" />
+          </div>
+          <div class="col-md-3">
+            <label>Nom de la vidéo (à voir si on peut renommer les vidéos existantes sinon nom fixe)</label>
+            <input v-model="element.name" />
+          </div>
         </div>
       </div>
 
@@ -57,7 +58,7 @@
 
 <script setup>
   import { defineProps } from 'vue';
-  const fs = require('file-system');
+  //const fs = require('fs');
 
   const props = defineProps({
     // TODO: nouvelles vidéos = id supérieur ou égale à l'id 126 (avant, c'est les vidéos du jeu)
@@ -65,12 +66,10 @@
     item: Object
   });
 
-  function getSubTheTitleVideoPath(id) {
-    const files = fs.readdirSync('StreamingAssets/Content/SubTheTitle/' + id);
-    console.log('files');
-    console.log(files);
-
+  function getVideoPath(element) {
+    return 'StreamingAssets/Content/SubTheTitle/' + element.id + '/' + element.name;
   }
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -14,23 +14,23 @@
       </li>
     </ul>
 
+<pre style="background-color: #001f3f"><code id="json-container"></code></pre>
     <UseYourWordCategory :data=manifest.packages[0][category] :item=category @clicked="onClickChild"/>
   </div>
 </template>
 
 <script setup>
   // @ is an alias to /src
-  import UseYourWordCategory from '@/components/UseYourWordCategory.vue'
+  import UseYourWordCategory from '@/components/UseYourWordCategory.vue';
 
-  import manifest from '@/assets/Manifest_Addon-resources.assets-290.json'
-  import { ref, onMounted, defineProps } from 'vue'
+  import manifest from '@/assets/Manifest_Addon-resources.assets-290.json';
+  import { ref, onMounted, defineProps } from 'vue';
 
   const categories = ['blank-o-matic', 'extraExtra', 'subTheTitle', 'surveySays'];
 
-  // reactive state
   const count = ref(0);
-
   const category = ref();
+  const manifestTest = ref(manifest);
 
   const props = defineProps({
     msg: String
@@ -41,6 +41,7 @@
   // Methods are functions that mutate state and trigger updates.
   // They can be bound as event listeners in templates.
   function increment() {
+    console.log(manifestTest);
     count.value++;
   }
 
