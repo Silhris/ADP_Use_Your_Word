@@ -26,6 +26,9 @@
   import manifest from '@/assets/Manifest_Addon-resources.assets-290.json';
   import { ref, onMounted, defineProps } from 'vue';
 
+  const fs = require('file-system');
+  fs.open('Manifest_Addon-resources.assets-290.json');
+
   const categories = ['blank-o-matic', 'extraExtra', 'subTheTitle', 'surveySays'];
 
   const count = ref(0);
