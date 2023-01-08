@@ -14,8 +14,11 @@
       </li>
     </ul>
 
-<pre style="background-color: #001f3f"><code id="json-container"></code></pre>
-    <UseYourWordCategory :data=manifest.packages[0][category] :item=category @clicked="onClickChild"/>
+    <button @click="saveJSON">Save JSON</button>
+    <pre style="background-color: #001f3f"><code id="json-container"></code></pre>
+    <div v-if="manifest != null">
+      <UseYourWordCategory :data=manifest.packages[0][category] :item=category @clicked="onClickChild"/>
+    </div>
   </div>
 </template>
 
@@ -23,17 +26,25 @@
   // @ is an alias to /src
   import UseYourWordCategory from '@/components/UseYourWordCategory.vue';
 
-  import manifest from '@/assets/Manifest_Addon-resources.assets-290.json';
   import { ref, onMounted, defineProps } from 'vue';
 
-  const fs = require('file-system');
-  fs.open('Manifest_Addon-resources.assets-290.json');
+  import axios from 'axios';
 
   const categories = ['blank-o-matic', 'extraExtra', 'subTheTitle', 'surveySays'];
 
   const count = ref(0);
   const category = ref();
-  const manifestTest = ref(manifest);
+  let manifest = ref();
+
+  const getData = async() => {
+    try {
+      const response = await axios.get('http://localhost:3000/manifest');
+      manifest = response.data;
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const props = defineProps({
     msg: String
@@ -44,13 +55,30 @@
   // Methods are functions that mutate state and trigger updates.
   // They can be bound as event listeners in templates.
   function increment() {
-    console.log(manifestTest);
     count.value++;
   }
 
   onMounted(() => {
     console.log('Hellow World Component mounted');
+
+    getData();
   })
+
+  function saveJSON() {
+    console.log('manifest');
+    console.log(manifest);
+    axios.post('http://localhost:3000/manifest', manifest)
+        .then(response => {
+          console.log('response');
+          console.log(response);
+          // Do something with the response
+        })
+        .catch(error => {
+          console.log('error');
+          console.log(error);
+          // Handle the error
+        });
+  }
 
 </script>
 
