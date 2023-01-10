@@ -1,108 +1,26 @@
 <template>
   <v-container>
-    <v-row class="text-center">
-      <v-col cols="12">
-        <v-img
-          :src="require('../assets/logo.svg')"
-          class="my-3"
-          contain
-          height="200"
-        />
-      </v-col>
-
-      <v-col class="mb-4">
-        <h1 class="display-2 font-weight-bold mb-3">
-          Welcome to Vuetify
-        </h1>
-
-        <p class="subheading font-weight-regular">
-          For help and collaboration with other Vuetify developers,
-          <br>please join our online
-          <a
-            href="https://community.vuetifyjs.com"
-            target="_blank"
-          >Discord Community</a>
-        </p>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          What's next?
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(next, i) in whatsNext"
-            :key="i"
-            :href="next.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ next.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Important Links
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(link, i) in importantLinks"
-            :key="i"
-            :href="link.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ link.text }}
-          </a>
-        </v-row>
-      </v-col>
-
-      <v-col
-        class="mb-5"
-        cols="12"
-      >
-        <h2 class="headline font-weight-bold mb-3">
-          Ecosystem
-        </h2>
-
-        <v-row justify="center">
-          <a
-            v-for="(eco, i) in ecosystem"
-            :key="i"
-            :href="eco.href"
-            class="subheading mx-3"
-            target="_blank"
-          >
-            {{ eco.text }}
-          </a>
-        </v-row>
-      </v-col>
-    </v-row>
-
-
     <ul id="category">
       <li v-for="(item, key) in categories" :item=item :key="key" >
-        <button @click="category = item">
-          <img :src="item + '.jpg'" />
-        </button>
-        HERE {{category}} HERE
+        <v-hover v-slot="{ hover }" open-delay="200">
+          <v-card
+            :elevation="hover ? 16 : 2"
+            :class="{ 'on-hover': hover }"
+            class="mx-auto"
+          >
+            <v-card-text>
+              <img :src="item + '.jpg'" @click="category = item"/>
+            </v-card-text>
+          </v-card>
+        </v-hover>
       </li>
     </ul>
 
-    <button @click="saveJSON">Save JSON</button>
-    <pre style="background-color: #001f3f"><code id="json-container"></code></pre>
+    <v-btn @click="saveJSON">Save JSON</v-btn>
     <div v-if="manifest != null">
-      <UseYourWordCategory :data=manifest.packages[0][category] :item=category />
+      <v-hover>
+        <UseYourWordCategory :data=manifest.packages[0][category] :item=category />
+      </v-hover>
     </div>
   </v-container>
 </template>
@@ -150,7 +68,7 @@
 
     data: () => ({
       manifest: null,
-      categories: ['blank-o-matic', 'extraExtra', 'subTheTitle', 'surveySays'],
+      categories: ['blank-o-matic', 'blank-o-matic_FR', 'extraExtra', 'extraExtra_FR', 'subTheTitle', 'subTheTitle_FR', 'surveySays', 'surveySays_FR'],
       category: null,
       ecosystem: [
         {
