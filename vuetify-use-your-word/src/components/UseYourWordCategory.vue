@@ -11,7 +11,7 @@
 
     <v-tabs v-model="tab">
       <v-tab-item v-for="tab in tabs" :key="tab">
-        <v-expansion-panels v-if="tab =='Édition'">
+        <v-expansion-panels v-if="tab == 'Édition'">
           <div v-for="element in props.data" :key="element.id" class="p-3" style="width: 100%">
             <v-row class="text-center">
               <v-col cols="12">
