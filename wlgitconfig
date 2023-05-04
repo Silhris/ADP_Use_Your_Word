@@ -1,0 +1,84 @@
+[alias]
+  sts = status -s
+  st = status -sb
+  cl = clone
+  ci = commit
+  ca = commit --amend
+  filelog = log -u
+  fl = log -u
+
+  cp = cherry-pick
+  co = checkout
+  unstage = reset HEAD
+  precommit = diff --cached --diff-algorithm=minimal -w
+
+  pushf = push --force-with-lease
+
+  br = branch
+  bra = branch -ra
+
+  #list commands
+  tip = log -n 1 --abbrev-commit --decorate
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty='format:%C(auto)%h %C(cyan)[%ar]%C(auto)%d %C(yellow)%ae %Creset%s' --abbrev-commit --all
+  tig = log --graph --boundary --left-right --cherry-pick --decorate HEAD...FETCH_HEAD
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+  #list all aliases
+  la = "!git config -l | grep alias | cut -c 7-"
+  #list modified files in last commit
+  dl = "!git ll -1"
+
+  #diff last commit
+  dlc = diff --cached HEAD^
+  dr  = "!f() { git diff -w "$1"^.."$1"; }; f"
+  diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+  dw = diff --word-diff
+  dcw = diff --color-words
+  dcwr = diff --color-word=.
+
+  r = reset
+  r1 = reset HEAD^
+  r2 = reset HEAD^^
+  rh = reset --hard
+  rh1 = reset HEAD^ --hard
+  rh2 = reset HEAD^^ --hard
+  nevermind = !git reset --hard HEAD && git clean -d -f
+
+  #stash
+  sl = stash list
+  stashes = stash list
+  sa = stash apply
+  ss = stash save
+  sp = stash pop
+
+  last = log -1 --stat
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+
+[merge]
+  tool = kdiff3
+
+[mergetool "kdiff3"]
+  trustExitCode = False
+
+[diff]
+  guitool = kdiff3
+
+[difftool "kdiff3"]
+  trustExitCode = False
+
+[core]
+  autocrlf = input
+  trustctime = false
+  editor = vim
+  filemode = false
+  eof = lf
+[push]
+  default = upstream
+[pull]
+  rebase = preserve
+
+[credential]
+  helper = cache --timeout 36000
+[safe]
+	directory = ./

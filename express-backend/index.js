@@ -11,30 +11,25 @@ app.use(cors({
 }));
 app.use(bodyParser.json({limit: '50mb'}));
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
-
 app.listen(3000, () => {
   console.log('Server listening on port 3000');
 });
 
+app.get('/', (req, res) => {
+  res.send('Hello World');
+});
 
+// Permet de récupérer le JSON du jeu Use Your Word
 app.get('/manifest', (req, res) => {
   fs.readFile('public/assets/Manifest_Addon-resources.assets-290.json', (err, data) => {
     if (err) throw err;
-    console.log('data');
-    console.log(data);
     res.json(JSON.parse(data));
   });
 });
 
-
-
+// Permet de mettre à jour le JSON du jeu Use Your Word
 app.post('/manifest', (req, res) => {
   let data = req.body;
-  console.log('data');
-  console.log(data);
 
   fs.writeFile('public/assets/Manifest_Addon-resources.assets-290.json', JSON.stringify(data), (err) => {
     if (err) throw err;
