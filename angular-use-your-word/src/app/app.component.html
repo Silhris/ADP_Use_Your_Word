@@ -1,0 +1,7 @@
+<ul id="category">
+  <li *ngFor="let category of categories" >
+    <img src="assets/{{category}}.jpg" (click)="selectedCategory = category; yoloTest();"/>
+  </li>
+</ul>
+
+<router-outlet></router-outlet>

@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:8080',
+  origin: 'http://localhost:4200',
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
