@@ -3,5 +3,8 @@
     <img src="assets/{{category}}.jpg" (click)="selectedCategory = category; yoloTest();"/>
   </li>
 </ul>
+<button (click)="saveJSON()">Save JSON</button>
+
+<app-edit-category data=manifest.packages[0][selectedCategory] item=selectedCategory></app-edit-category>
 
 <router-outlet></router-outlet>

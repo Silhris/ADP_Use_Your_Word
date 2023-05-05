@@ -15,9 +15,22 @@ export class AppComponent {
     this.fetchJSON();
   }
 
-  async fetchJSON() {
+  // Utiliser une fonction fléchée permet de rendre "this" disponible, malgré que ce soit une fonction asynchrone
+  fetchJSON = async() => {
     const result = await fetch('http://localhost:3000/manifest');
     this.manifest = await result.json();
+  }
+
+  saveJSON = async() => {
+    const result = await fetch('http://localhost:3000/manifest', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(this.manifest)
+    });
+    console.log('postJSON response');
+    console.log(await result.text());
   }
 
   yoloTest() {

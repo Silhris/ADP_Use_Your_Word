@@ -5,42 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="616e3c5c-ce09-425f-92a2-ba27d2864470" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/blank-o-matic.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/blank-o-matic_FR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/extraExtra.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/extraExtra_FR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/subTheTitle.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/subTheTitle_FR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/surveySays.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/surveySays_FR.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/.vscode/extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/.vscode/tasks.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/app/app.component.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/src/styles.sass" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/use-your-word/tsconfig.spec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../express-backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../express-backend/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,14 +39,16 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/a701664/dev/PTC/ADP_Use_Your_Word/angular-use-your-word/src/assets",
+    "last_opened_file_path": "/home/a701664/dev/PTC/ADP_Use_Your_Word/angular-use-your-word/src/app/edit-category",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.24592072"
+    "project.structure.side.proportion": "0.24592072",
+    "settings.editor.selected.configurable": "preferences.fileTypes"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/edit-category" />
       <recent name="$PROJECT_DIR$/src/assets" />
       <recent name="$PROJECT_DIR$/../../unnamed_right_now" />
     </key>
