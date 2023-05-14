@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 
+interface Manifest {
+  packages: any; // Remplacez "any" par le type approprié pour la propriété "packages"
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,9 +11,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'use-your-word';
-  manifest: [] = [];
-  categories: String[] = ['blank-o-matic', 'blank-o-matic_FR', 'extraExtra', 'extraExtra_FR', 'subTheTitle', 'subTheTitle_FR', 'surveySays', 'surveySays_FR'];
-  selectedCategory: String = "";
+  selectedCategoryData: {} = {};
+  manifest: Manifest = {
+    packages: []
+  };
+  categories: string[] = ['blank-o-matic', 'blank-o-matic_FR', 'extraExtra', 'extraExtra_FR', 'subTheTitle', 'subTheTitle_FR', 'surveySays', 'surveySays_FR'];
+  selectedCategory: string = "";
 
   ngOnInit() {
     this.fetchJSON();
@@ -33,8 +40,8 @@ export class AppComponent {
     console.log(await result.text());
   }
 
-  yoloTest() {
-    console.log('Yolo Test!');
-    console.log(this);
+  selectCategory(category: string) {
+    this.selectedCategory = category;
+    this.selectedCategoryData = this.manifest.packages[0][this.selectedCategory];
   }
 }

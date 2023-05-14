@@ -1,10 +1,10 @@
 <ul id="category">
   <li *ngFor="let category of categories" >
-    <img src="assets/{{category}}.jpg" (click)="selectedCategory = category; yoloTest();"/>
+    <img src="assets/{{category}}.jpg" (click)="selectCategory(category)"/>
   </li>
 </ul>
 <button (click)="saveJSON()">Save JSON</button>
 
-<app-edit-category data=manifest.packages[0][selectedCategory] item=selectedCategory></app-edit-category>
+<app-edit-category data={{selectedCategoryData}} item={{selectedCategory}}></app-edit-category>
 
 <router-outlet></router-outlet>
