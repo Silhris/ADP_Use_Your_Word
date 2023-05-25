@@ -11,12 +11,12 @@ interface Manifest {
 })
 export class AppComponent {
   title = 'use-your-word';
-  selectedCategoryData: {} = {};
   manifest: Manifest = {
     packages: []
   };
   categories: string[] = ['blank-o-matic', 'blank-o-matic_FR', 'extraExtra', 'extraExtra_FR', 'subTheTitle', 'subTheTitle_FR', 'surveySays', 'surveySays_FR'];
   selectedCategory: string = "";
+  selectedCategoryData: [] = [];
 
   ngOnInit() {
     this.fetchJSON();
@@ -41,6 +41,7 @@ export class AppComponent {
   }
 
   selectCategory(category: string) {
+    console.log(this);
     this.selectedCategory = category;
     this.selectedCategoryData = this.manifest.packages[0][this.selectedCategory];
   }

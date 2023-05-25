@@ -1,4 +1,5 @@
 import { ErrorHandler, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -6,6 +7,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EditCategoryComponent } from './edit-category/edit-category.component';
+import { UywInputComponent } from './form/uyw-input/uyw-input.component';
 
 // TODO: temporaire pour tester la récupération de toutes les erreurs
 class MyErrorHandler implements ErrorHandler {
@@ -19,13 +21,16 @@ class MyErrorHandler implements ErrorHandler {
 @NgModule({
   declarations: [
     AppComponent,
-    EditCategoryComponent
+    EditCategoryComponent,
+    UywInputComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    FormsModule,
+    MatTabsModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: ErrorHandler, useClass: MyErrorHandler }],
   bootstrap: [AppComponent]

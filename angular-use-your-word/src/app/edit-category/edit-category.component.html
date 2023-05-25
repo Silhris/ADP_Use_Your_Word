@@ -1,8 +1,14 @@
 <p>edit-category works!</p>
 
 <mat-tab-group>
-  <mat-tab *ngFor="let tab of tabs" label="{{tab}}">
-    Contenu de l'onglet 1
-    <pre>{{this | json}}</pre>
+  <mat-tab label="Création">
+    <app-uyw-input></app-uyw-input>
+  </mat-tab>
+
+  <mat-tab label="Édition">
+    <span [hidden]="data.length > 0">Aucune catégorie sélectionnée</span>
+    <div *ngFor="let element of data" >
+      {{element | json}}
+    </div>
   </mat-tab>
 </mat-tab-group>

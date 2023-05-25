@@ -8,7 +8,7 @@ import { Component, Input, NgModule, OnChanges, SimpleChanges } from '@angular/c
 export class EditCategoryComponent implements OnChanges {
   tabs: String[] = ['Création', 'Édition'];
   @Input() item: {} = {};
-  @Input() data: {} = {};
+  @Input() data: [] = [];
 
 
   getVideoPath(element: any) {
