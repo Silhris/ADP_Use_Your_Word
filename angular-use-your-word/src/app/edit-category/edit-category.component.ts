@@ -1,9 +1,20 @@
 import { Component, Input, NgModule, OnChanges, SimpleChanges } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { MatTabsModule } from '@angular/material/tabs';
+import { UywInputComponent } from '../form/uyw-input/uyw-input.component';
 
 @Component({
+  standalone: true,
   selector: 'app-edit-category',
   templateUrl: './edit-category.component.html',
-  styleUrls: ['./edit-category.component.sass']
+  styleUrls: ['./edit-category.component.sass'],
+  imports: [
+    CdkAccordionModule,
+    CommonModule,
+    MatTabsModule,
+    UywInputComponent
+  ]
 })
 export class EditCategoryComponent implements OnChanges {
   tabs: String[] = ['Création', 'Édition'];

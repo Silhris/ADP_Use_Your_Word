@@ -7,8 +7,38 @@
 
   <mat-tab label="Édition">
     <span [hidden]="data.length > 0">Aucune catégorie sélectionnée</span>
-    <div *ngFor="let element of data" >
-      {{element | json}}
-    </div>
+
+    <cdk-accordion class="example-accordion">
+      <cdk-accordion-item
+        *ngFor="let element of data; let index = index;"
+        #accordionItem="cdkAccordionItem"
+        class="example-accordion-item"
+        role="button"
+        tabindex="0"
+        [attr.id]="'accordion-header-' + index"
+        [attr.aria-expanded]="accordionItem.expanded"
+        [attr.aria-controls]="'accordion-body-' + index">
+
+        <div class="example-accordion-item-header" (click)="accordionItem.toggle()">
+          <span class="example-accordion-item-description">
+            {{element['id']}} - Click to {{ accordionItem.expanded ? 'close' : 'open' }}
+          </span>
+        </div>
+        <div
+          class="example-accordion-item-body"
+          role="region"
+          [style.display]="accordionItem.expanded ? '' : 'none'"
+          [attr.id]="'accordion-body-' + index"
+          [attr.aria-labelledby]="'accordion-header-' + index">
+          {{element|json}}
+          {{element['prompt']}}
+          <div *ngFor="let answer of element['houseAnswers']">
+            {{answer}}
+            <app-uyw-input [item]="answer"></app-uyw-input>
+          </div>
+
+        </div>
+      </cdk-accordion-item>
+    </cdk-accordion>
   </mat-tab>
 </mat-tab-group>
