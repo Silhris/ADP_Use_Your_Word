@@ -17,19 +17,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 })
 export class UywInputComponent {
   @Input() item: String = '';
-  @Output() itemChange = new EventEmitter<String>();
-  favoriteColorControl = new FormControl(this.item);
+  @Input() indexFirstValue: number = 0;
+  @Input() indexSecondValue: number = 0;
+  @Input() data: any;
+  @Output() dataChange = new EventEmitter<[]>();
+
+  favoriteColorControl = new FormControl();
 
   // Permet de mettre à jour la valeur saisi depuis l'input dans la donnée en format JSON
   yolo() {
-    // CKC ... two way binding cassé
-    this.itemChange.emit(this.item);
+    this.data[this.indexFirstValue]['houseAnswers'][this.indexSecondValue] = this.favoriteColorControl.value;
+    this.dataChange.emit(this.data);
   }
 
   // Permet d'affecter la valeur récupéré depuis la donnée en format JSON
   ngOnChanges(changes: SimpleChanges) {
-    console.log('SimpleChanges');
-    console.log(this);
     this.favoriteColorControl.setValue(this.item);
   }
 }

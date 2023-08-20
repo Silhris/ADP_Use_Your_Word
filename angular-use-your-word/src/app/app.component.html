@@ -5,7 +5,8 @@
 </ul>
 <button (click)="saveJSON()">Save JSON</button>
 
-<app-edit-category [data]="selectedCategoryData" [item]="selectedCategory"></app-edit-category>
+{{selectedCategoryData|json}}
+<app-edit-category [(data)]="selectedCategoryData" [selectedCategoryName]="selectedCategoryName"></app-edit-category>
 
 <router-outlet></router-outlet>
 

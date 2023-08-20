@@ -22,6 +22,8 @@ Exécuter la commande ```npm install```
 Une fois l'exécution terminée, exécuter **ng serve**  
 Le site sera disponible sur localhost:4200
 
+Si la commande **ng** n'est pas disponible, exécuter: ```npm install -g @angular/cli``` puis ouvrir un nouveau terminal
+
 ----------------
 
 ----------------
