@@ -1,10 +1,54 @@
-<script setup lang="ts">
+<script lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios';
+
+export default {
+  name: 'App',
+  components: {
+    HelloWorld
+  },
+  mounted() {
+    this.getCategories()
+  },
+
+  methods: {
+    async getCategories() {
+      try {
+        const response = await axios.get('http://localhost:3000/categories');
+        this.categories = response.data;
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  },
+
+  data: () => ({
+    fieldFromAppView: 'dataAppView',
+    categories: null,
+  }),
+}
 </script>
 
 <template>
   <header>
+
+    <ul id="category">
+      <li v-for="(item, key) in categories" :item=item :key="key" >
+        <v-hover v-slot="{ hover }" open-delay="200">
+          <v-card
+              :elevation="hover ? 16 : 2"
+              :class="{ 'on-hover': hover }"
+              class="mx-auto"
+          >
+            <v-card-text>
+              <img :src="item + '.jpg'" @click="category = item"/>
+            </v-card-text>
+          </v-card>
+        </v-hover>
+      </li>
+    </ul>
+    
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
@@ -13,6 +57,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/category">Category</RouterLink>
       </nav>
     </div>
   </header>

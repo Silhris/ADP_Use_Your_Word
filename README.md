@@ -48,3 +48,21 @@ sudo apt-get update
 sudo apt-get install yarn
 
 Yarn devrait mainteant être disponible
+
+## NVM
+
+Voir https://github.com/nvm-sh/nvm#git-install
+
+Lors de l'ouverture d'un nouveau terminal, si NVM n'est pas disponible, la commande
+
+```
+export NVM_DIR="$HOME/.nvm" && (
+  git clone https://github.com/nvm-sh/nvm.git "$NVM_DIR"
+  cd "$NVM_DIR"
+  git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+) && \. "$NVM_DIR/nvm.sh"
+```
+
+n'a pas été saisi dans le bon fichier soit ```.bashrc```,  ```.bash_profile``` ou  ```.zshrc```
+
+Une fois effectuée, la commande devrait être disponible lors de l'ouverture d'un nouveau terminal

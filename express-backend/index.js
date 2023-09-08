@@ -2,10 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs');
+const jsonPath = require('jsonpath');
+const lodash = require('lodash');
 
 const app = express();
 app.use(cors({
-  origin: 'http://localhost:4200',
+  origin: ['http://localhost:4200', 'http://localhost:5173'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
@@ -19,7 +21,49 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 
+// Les catégories que l'on souhaite récupérer
+const usableCategories = ['blank-o-matic', 'extraExtra', 'subTheTitle', 'surveySays'];
+
+// Permet de récupérer les catégories du jeu Use Your Word
+app.get('/categories', (req, res) => {
+  // TODO: améliorer le processus de lecture du fichier JSON (pas à chaque appel ?)
+  fs.readFile('public/assets/Manifest_Addon-resources.assets-290.json', (err, data) => {
+    if (err) throw err;
+    const jsonData = JSON.parse(data);
+    // On récupère les catégories et le contenu du JSON
+    const categories = jsonPath.query(jsonData, '$.packages.0')[0];
+    // On récupère uniquement le nom des catégories que l'on souhaite traiter
+    const workingCategories = lodash.keys(lodash.pick(categories, usableCategories));
+    console.log(workingCategories);
+    res.send(workingCategories);
+  });
+});
+
+// Mettre à jour les données d'une catégorie
+app.get('/categories/:name', (req, res) => {
+  fs.readFile('public/assets/Manifest_Addon-resources.assets-290.json', (err, data) => {
+    if (err) throw err;
+    const jsonData = JSON.parse(data);
+    const categories = jsonPath.query(jsonData, '$.packages.0.' + req.params.name);
+    // On récupère uniquement le nom des catégories que l'on souhaite traiter
+    //const workingCategory = lodash.pick(categories, );
+    console.log(categories[0]);
+    res.send(categories[0]);
+  });
+});
+
+// Mettre à jour une question d'une catégorie
+app.put('/categories/:name/:id', (req, res) => {
+  console.log('req');
+  console.log(req);
+  console.log('req.params');
+  console.log(req.params);
+  console.log('res');
+  console.log(res);
+});
+
 // Permet de récupérer le JSON du jeu Use Your Word
+// TODO: à ne plus utiliser, on va récupérer les catégories puis les questions de la catégorie choisie
 app.get('/manifest', (req, res) => {
   fs.readFile('public/assets/Manifest_Addon-resources.assets-290.json', (err, data) => {
     if (err) throw err;
@@ -28,6 +72,7 @@ app.get('/manifest', (req, res) => {
 });
 
 // Permet de mettre à jour le JSON du jeu Use Your Word
+// TODO: ancien, à ne plus utiliser, on va mettre à jour les données unitairement par catégorie et par question
 app.post('/manifest', (req, res) => {
   let data = req.body;
 
