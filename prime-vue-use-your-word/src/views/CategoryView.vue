@@ -19,19 +19,19 @@
 import axios from 'axios';
 export default {
   mounted() {
-    this.getCategories()
+    //this.getCategories()
   },
 
   methods: {
-    async getCategories() {
-      try {
-        const response = await axios.get('http://localhost:3000/categories');
-        this.categories = response.data;
-        console.log(response);
-      } catch (error) {
-        console.error(error);
-      }
-    }
+    //async getCategories() {
+    //  try {
+    //    const response = await axios.get('http://localhost:3000/categories');
+    //    this.categories = response.data;
+    //    console.log(response);
+    //  } catch (error) {
+    //    console.error(error);
+    //  }
+    //}
   },
 
   data: () => ({
