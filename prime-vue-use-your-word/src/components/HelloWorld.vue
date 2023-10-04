@@ -1,17 +1,42 @@
-<script setup lang="ts">
-defineProps<{
-  msg: string
-}>()
+<script lang="ts">
+import axios from 'axios';
+
+export default {
+  props: {
+    'categoryName': String
+  },
+  mounted() {
+    this.getCategoryData()
+    //this.forceUpdate();
+  },
+  updated() {
+    this.getCategoryData()
+  },
+
+  methods: {
+    async getCategoryData() {
+      try {
+        const response = await axios.get('http://localhost:3000/categories/' + this.categoryName) ;
+        this.categoryData = response.data;
+        console.log(this.categoryData);
+        //// Permet de recharger le DOM qui n'affiche pas le contenu lorsque la méthode est appelée depuis le hook mounted
+        //this.$forceUpdate();
+      } catch (error) {
+        console.error(error);
+      }
+    }
+  }
+}
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>. What's next?
-    </h3>
+  <div v-for="(element, i) in categoryData" :key="element.id" style="width: 100%">
+    <div class="grid">
+      <label class="col-md-12">Liste des propositions</label>
+      <div v-for="(row, j) in element.houseAnswers" class="col" style="width: 100%">
+        <InputText type="text" v-model="element.houseAnswers[j]" />
+      </div>
+    </div>
   </div>
 </template>
 

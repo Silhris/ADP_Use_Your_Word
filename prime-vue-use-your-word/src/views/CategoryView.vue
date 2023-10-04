@@ -1,7 +1,15 @@
 <template>
   <div class="category">
-    <h1>Category WIP</h1>
-    {{$data}}
+    <div v-for="(element, i) in categoryData" :key="element.id" style="width: 100%">
+
+      <div class="grid">
+        <label class="col-md-12">Liste des propositions</label>
+        <div v-for="(row, j) in element.houseAnswers" class="col" style="width: 100%">
+          <InputText type="text" v-model="element.houseAnswers[j]" />
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
@@ -17,25 +25,34 @@
 
 <script>
 import axios from 'axios';
+
 export default {
-  mounted() {
-    //this.getCategories()
+  async mounted() {
+    await this.getCategoryData()
+    //this.forceUpdate();
+  },
+  updated() {
+    this.getCategoryData()
   },
 
   methods: {
-    //async getCategories() {
-    //  try {
-    //    const response = await axios.get('http://localhost:3000/categories');
-    //    this.categories = response.data;
-    //    console.log(response);
-    //  } catch (error) {
-    //    console.error(error);
-    //  }
-    //}
-  },
+    async getCategoryData() {
+      try {
+        const categoryName = this.$route.params.name;
+        const response = await axios.get('http://localhost:3000/categories/' + categoryName) ;
+        this.categoryData = response.data;
+        console.log(this.categoryData);
+        //// Permet de recharger le DOM qui n'affiche pas le contenu lorsque la méthode est appelée depuis le hook mounted
+        //this.$forceUpdate();
+      } catch (error) {
+        console.error(error);
+      }
+    },
 
-  data: () => ({
-      testField: 'awesomeData'
-  })
+    forceUpdate() {
+      // Permet de recharger le DOM qui n'affiche pas le contenu lorsque la méthode est appelée depuis le hook mounted
+      this.$forceUpdate();
+    }
+  }
 }
 </script>

@@ -5,10 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="616e3c5c-ce09-425f-92a2-ba27d2864470" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/edit-category/edit-category.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit-category/edit-category.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/edit-category/edit-category.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit-category/edit-category.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ADP_Use_Your_Word.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/ADP_Use_Your_Word.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../express-backend/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../express-backend/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prime-vue-use-your-word/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../prime-vue-use-your-word/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prime-vue-use-your-word/src/components/HelloWorld.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../prime-vue-use-your-word/src/components/HelloWorld.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prime-vue-use-your-word/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../prime-vue-use-your-word/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../prime-vue-use-your-word/src/views/CategoryView.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../prime-vue-use-your-word/src/views/CategoryView.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +31,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2PKZKKDJR8iScjwnbzNhr2Kr1Do" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -36,7 +43,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/a701664/dev/ancv",
+    "git-widget-placeholder": "develop",
+    "last_opened_file_path": "//wsl$/Ubuntu/home/silhris/angular_tutorial_tour_of_heroes",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.24592072",

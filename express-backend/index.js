@@ -39,16 +39,17 @@ app.get('/categories', (req, res) => {
   });
 });
 
-// Mettre à jour les données d'une catégorie
+// Récupère les données d'une catégorie
 app.get('/categories/:name', (req, res) => {
   fs.readFile('public/assets/Manifest_Addon-resources.assets-290.json', (err, data) => {
     if (err) throw err;
     const jsonData = JSON.parse(data);
-    const categories = jsonPath.query(jsonData, '$.packages.0.' + req.params.name);
-    // On récupère uniquement le nom des catégories que l'on souhaite traiter
-    //const workingCategory = lodash.pick(categories, );
-    console.log(categories[0]);
-    res.send(categories[0]);
+    // On récupère la racine du JSON où se trouve les données
+    const root = jsonPath.query(jsonData, '$.packages.0');
+    // On accède à la données via l'utilisation de bracket pour éviter les problèmes avec les clés qui ont des traits d'union
+    const categories = root[0][req.params.name];
+    console.log(categories);
+    res.send(categories);
   });
 });
 
